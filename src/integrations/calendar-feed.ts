@@ -108,7 +108,7 @@ export class IcsCalendarFeedService implements CalendarFeedService {
     this.writeFeeds([...feeds, feed]);
     this.cache.set(feed.id, {
       at: Date.now(),
-      events: expandEvents(parsed, feed, new Date(Date.now() - 86_400_000), new Date(Date.now() + 90 * 86_400_000)),
+      events: expandEvents(parsed, feed, new Date(Date.now() - 90 * 86_400_000), new Date(Date.now() + 90 * 86_400_000)),
     });
     return {id: feed.id, label: feed.label, host, addedAt: feed.addedAt};
   }
